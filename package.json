@@ -1,0 +1,12 @@
+{
+    "name": "AnimesRockDB",
+    "version": "1.0.0",
+    "description": "AnimesRockDB Single Page Application",
+    "main": "index.html",
+    "author": "Nikola Stoychev",
+    "license": "ISC",
+    "dependencies": {
+        "lit-html": "1.3.0",
+        "page": "1.11.6"
+    }
+}
