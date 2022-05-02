@@ -1,5 +1,6 @@
 import { clearUserData, getUserData, setUserData } from '../util.js';
 const host = 'https://eu-api.backendless.com/DF098606-98EB-420F-FF58-B4FE2652E000/FD8822E7-AB00-4AA7-A05D-9C0F9DFA42A4';
+
 async function request(url, options) {
     try {
         const response = await fetch(host + url, options);
@@ -63,8 +64,8 @@ export async function login(email, password) {
     setUserData(userData);
 }
 
-export async function register(email, password) {
-    const response = await request('/users/register', createOptions('post', { email, password }));
+export async function register(email, password, name) {
+    const response = await request('/users/register', createOptions('post', { email, password, name }));
     await login(response.email, password)
 }
 

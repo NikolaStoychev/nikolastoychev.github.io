@@ -40,10 +40,10 @@ async function decorateContext(ctx, next) {
 }
 
 function updateUserNav() {
-    //add a class to the HTML nav buttons like guest/user so that we can hide them
     const userData = getUserData();
 
     if (userData != null) {
+        document.querySelector('#welcomeMsg').textContent = `Welcome, ${userData.name}`;
         document.querySelector('#user').style.display = 'block';
         document.querySelector('#guest').style.display = 'none';
     } else {

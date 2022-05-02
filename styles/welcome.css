@@ -72,7 +72,7 @@
     width: auto;
 }
 
-.game {
+.anime {
     box-shadow: 0px 0px 30px 0px;
     margin-top: 20px;
     padding: 50px;
@@ -100,7 +100,7 @@
     max-width: 100%;
 }
 
-.game>h3 {
+.anime>h3 {
     font-family: "Agency FB";
     font-size: 42px;
     font-weight: 700;
@@ -113,7 +113,7 @@
     text-transform: uppercase;
 }
 
-.game-content>h4 {
+.anime-content>h4 {
     color: #c2d4f8;
     font-size: 24px;
     text-align: center;
