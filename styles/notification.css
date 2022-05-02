@@ -1,0 +1,9 @@
+#notification {
+    position: fixed;
+    top: 10%;
+    right: 42%;
+    background-color: rgb(255, 195, 195);
+    color: black;
+    padding: 16px 32px;
+    cursor: pointer;
+}

@@ -1,6 +1,7 @@
 import { editById, getById } from '../api/data.js';
 import { getFormData } from '../util.js';
 import { editTemplate, formTemplate } from '../templates/editTemplate.js';
+import { notify } from '../common/notification.js';
 
 export function showEditPage(ctx) {
     const animeId = ctx.params.id;
@@ -27,7 +28,7 @@ export function showEditPage(ctx) {
 
             ctx.page.redirect(`/details/${anime.objectId}`);
         } catch (error) {
-            alert(error.message);
+            notify(error.message);
         }
     }
 }

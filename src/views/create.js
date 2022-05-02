@@ -1,6 +1,7 @@
 import { create } from '../api/data.js';
 import { getFormData } from '../util.js';
 import { createTemplate } from '../templates/createTemplate.js';
+import { notify } from '../common/notification.js';
 
 export function showCreatePage(ctx) {
     ctx.render(createTemplate(onSubmit));
@@ -26,7 +27,7 @@ export function showCreatePage(ctx) {
 
             ctx.page.redirect('/home');
         } catch (error) {
-            alert(error.message);
+            notify(error.message);
         }
     }
 }

@@ -173,3 +173,23 @@
     font-size: 60px;
     font-family: "Agency FB";
 }
+
+.pagination {
+    background-color: transparent;
+    text-align: left;
+    padding: 30px;
+}
+
+.page-buttons {
+    background-color: #fd5454;
+    font-size: 1.0rem;
+    padding-top: 20px;
+    margin-top: 10px;
+    color: white;
+    padding: 0.9em 1.4em;
+}
+
+.page-buttons:hover {
+    background-color: rgb(192, 129, 117);
+    color: white;
+}

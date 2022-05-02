@@ -1,7 +1,11 @@
-import { getAll } from "../api/data.js";
+import { getAll, getPage } from "../api/data.js";
 import { catalogTemplate } from "../templates/catalogTemplate.js";
 
 export async function showCatalogPage(ctx) {
-    const animes = await getAll();
-    ctx.render(catalogTemplate(animes));
+
+    console.log(ctx.querystring)
+    const page = Number(ctx.querystring.split('=')[1] || 1);
+
+    const animes = await getPage(page);
+    ctx.render(catalogTemplate(animes.data, page, animes.pages));
 }

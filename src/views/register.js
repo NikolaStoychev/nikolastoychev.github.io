@@ -1,5 +1,6 @@
 import { register } from "../api/data.js";
 import { registerTemplate } from '../templates/registerTemplate.js';
+import { notify } from '../common/notification.js';
 
 export function showRegisterPage(ctx) {
     ctx.render(registerTemplate(onSubmit));
@@ -25,7 +26,7 @@ export function showRegisterPage(ctx) {
             ctx.updateUserNav();
             ctx.page.redirect('/home');
         } catch (err) {
-            alert(err.message);
+            notify(err.message);
         }
     }
 }

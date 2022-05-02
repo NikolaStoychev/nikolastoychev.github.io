@@ -6,18 +6,32 @@ export const register = api.register;
 
 // SPA specifics
 const endpoints = {
+    getPage: '/data/animesData?pageSize=3&offset=',
+    count: '/data/animesData?props=Count(title)',
     create: '/data/animesData',
-    all: '/data/animesData',
     latest: '/data/animesData?pageSize=3&sortBy=yearTo%20desc%20',
     byId: (id) => `/data/animesData/${id}`
-}
+};
+const pageSize = 3;
 
 export async function create(data) {
     return api.post(endpoints.create, data);
 }
 
+export async function getPage(page) {
+    const [data, count] = await Promise.all([
+        api.get(endpoints.getPage + (page - 1) * pageSize),
+        api.get(endpoints.count)
+    ]);
+
+    return {
+        data,
+        pages: Math.ceil(count[0].count / pageSize)
+    };
+}
+
 export async function getAll() {
-    return api.get(endpoints.all);
+    return api.get(endpoints.count);
 }
 
 export async function getById(id) {

@@ -1,4 +1,6 @@
 import { clearUserData, getUserData, setUserData } from '../util.js';
+import { notify } from '../common/notification.js';
+
 const host = 'https://eu-api.backendless.com/DF098606-98EB-420F-FF58-B4FE2652E000/FD8822E7-AB00-4AA7-A05D-9C0F9DFA42A4';
 
 async function request(url, options) {
@@ -13,7 +15,7 @@ async function request(url, options) {
 
         return response.json();
     } catch (err) {
-        alert(err.message);
+        notify(err.message);
         throw err;
     }
 }
@@ -81,7 +83,7 @@ export async function logout() {
             return response;
         }
     } catch (err) {
-        alert(err.message);
+        notify(err.message);
         throw err;
     }
 }

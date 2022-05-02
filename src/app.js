@@ -24,7 +24,7 @@ page('/', '/home');
 page('/login', showLoginPage);
 page('/register', showRegisterPage);
 page('/create', showCreatePage);
-page('/catalog', showCatalogPage);
+page('/catalog/:page', showCatalogPage);
 page('/edit/:id', showEditPage);
 page('/details/:id', showDetailsPage);
 
