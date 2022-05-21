@@ -1,4 +1,4 @@
-import { getAll, getPage } from "../api/data.js";
+import { getPage } from "../api/data.js";
 import { catalogTemplate } from "../templates/catalogTemplate.js";
 
 export async function showCatalogPage(ctx) {

@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/styles/style.css">
-    <title>AnimesRockDB</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="/src/app.js" type="module"></script>
+    <title>AnimesRockDB</title>
 </head>
 
 <body>
@@ -14,7 +15,14 @@
 
         <header>
             <!-- Navigation -->
-            <h1><a class="home" href="/home">Animes RockDB</a></h1>
+            <h1>
+                <a class="home" href="/home">Animes RockDB</a>
+                <form class="search-form">
+                    <input class="search" type="search" name="search">
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </form>
+            </h1>
+
             <nav>
                 <a href="/catalog/:?page=1">All animes</a>
                 <!-- Logged-in users -->
@@ -28,6 +36,7 @@
                     <a href="/login">Login</a>
                     <a href="/register">Register</a>
                 </div>
+
             </nav>
         </header>
 

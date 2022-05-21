@@ -10,7 +10,9 @@ const endpoints = {
     count: '/data/animesData?props=Count(title)',
     create: '/data/animesData',
     latest: '/data/animesData?pageSize=3&sortBy=yearTo%20desc%20',
-    byId: (id) => `/data/animesData/${id}`
+    byId: (id) => `/data/animesData/${id}`,
+    byTitle: (title) => `/data/animesData?where=title%20LIKE%20%27%25${title}%25%27`
+
 };
 const pageSize = 3;
 
@@ -32,6 +34,10 @@ export async function getPage(page) {
 
 export async function getAll() {
     return api.get(endpoints.count);
+}
+
+export async function getSearchByTitle(title) {
+    return api.get(endpoints.byTitle(encodeURI(title)));
 }
 
 export async function getById(id) {

@@ -8,6 +8,7 @@ import { showRegisterPage } from './views/register.js';
 import { showEditPage } from './views/edit.js';
 import { showDetailsPage } from './views/details.js';
 import { showCreatePage } from './views/create.js';
+import { showSearchPage } from './views/search.js';
 
 const root = document.querySelector('main');
 
@@ -18,6 +19,9 @@ document.querySelector('#logoutBtn').addEventListener('click', async(ev) => {
     page.redirect('/home');
 });
 
+document.querySelector('.search-form').addEventListener('submit', onSearch);
+
+
 page(decorateContext);
 page('/home', showHomePage);
 page('/', '/home');
@@ -27,6 +31,7 @@ page('/create', showCreatePage);
 page('/catalog/:page', showCatalogPage);
 page('/edit/:id', showEditPage);
 page('/details/:id', showDetailsPage);
+page('/search/:query', showSearchPage);
 
 
 
@@ -50,4 +55,11 @@ function updateUserNav() {
         document.querySelector('#user').style.display = 'none';
         document.querySelector('#guest').style.display = 'block';
     }
+}
+
+function onSearch(ev) {
+    ev.preventDefault();
+    const formData = new FormData(ev.target);
+    const searchParam = formData.get('search').trim();
+    page.redirect(`/search/${searchParam}`);
 }
